@@ -5,12 +5,12 @@
 		</style>
 	</head>
 	<body>
-		<img height="95%"; width="99%"; align="center"; src="https://cdn.discordapp.com/attachments/193042027066163200/364451950995177482/4K_Landscape_Wallpaper_v2.png" alt="If you are seeing this text, please let Maldor know">
+		<img height="95%"; width="99%"; align="center"; src="images/LDSG_Full_background.png" alt="If you are seeing this text, please let Maldor know">
 		<?php
 			$id = $_GET["steamid"];
 			$map = $_GET["mapname"];
  
-			$link = file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=(76561198076633842)&steamids=' . $id . '&format=json');
+			$link = file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=(2E50BA04E624565BD7B54862D9E6A861)&steamids=' . $id . '&format=json');
 			
 			$myarray = json_decode($link, true);
 		?>
