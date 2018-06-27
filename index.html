@@ -1,22 +1,22 @@
 <html>
-<head>
-<style>
-body {background-color:white;}
-</style>
-</head>
-<body style="height:100%; background-image: url('https://cdn.discordapp.com/attachments/193042027066163200/364451950995177482/4K_Landscape_Wallpaper_v2.png');background-repeat: no-repeat;">
-<?php
-$id = $_GET["steamid"];
-$map = $_GET["mapname"];
+	<head>
+		<style>
+			body {background-color:white;}
+		</style>
+	</head>
+	<body style="height:100%; background-image: url('https://cdn.discordapp.com/attachments/193042027066163200/364451950995177482/4K_Landscape_Wallpaper_v2.png');background-repeat: no-repeat;">
+		<?php
+			$id = $_GET["steamid"];
+			$map = $_GET["mapname"];
  
-$link = file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=(76561198076633842)&steamids=' . $id . '&format=json');
-
-$myarray = json_decode($link, true);
-?>
-<p>Welcome to the server</p>
-<div style="height:100%;">
-<div style="position:relative;top:50%;text-align:center"><img class="avatar" src="<?php print $myarray['response']['players'][0]['avatarmedium']; ?>" />
-<p class="name"><?php print $myarray['response']['players'][0]['personaname']; ?></p></div>
-</div>
-</body>
+			$link = file_get_contents('http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=(76561198076633842)&steamids=' . $id . '&format=json');
+			
+			$myarray = json_decode($link, true);
+		?>
+		<p>Welcome to the server</p>
+		<div style="height:100%;">
+			<div style="position:relative;top:50%;text-align:center"><img class="avatar" src="<?php print $myarray['response']['players'][0]['avatarmedium']; ?>" />
+				<p class="name"><?php print $myarray['response']['players'][0]['personaname']; ?></p></div>	
+		</div>
+	</body>
 </html>
